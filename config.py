@@ -16,10 +16,10 @@ def is_enabled(value, default):
 
 # Mandatory variables for the bot to start
 # API ID from https://my.telegram.org/auth
-API_ID = int(os.environ.get("API_ID"))
+API_ID = int(os.environ.get("API_ID", "26305247"))
 # API Hash from https://my.telegram.org/auth
-API_HASH = os.environ.get("API_HASH")
-BOT_TOKEN = os.environ.get("BOT_TOKEN")  # Bot token from @BotFather
+API_HASH = os.environ.get("API_HASH", "20ca7e6687c281e11782856c7efd0ff7")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "6239798308:AAF-x-VpDPyWZDMPDvKnhhQ4RSfPLK0m5Vc")  # Bot token from @BotFather
 ADMINS = (
     [int(i.strip()) for i in os.environ.get("ADMINS").split(",")]
     if os.environ.get("ADMINS")
@@ -28,14 +28,14 @@ ADMINS = (
 
 DATABASE_NAME = os.environ.get("DATABASE_NAME", "MdiskConvertor")
 DATABASE_URL = os.environ.get(
-    "DATABASE_URL", None
+    "DATABASE_URL", "mongodb+srv://Dipanshu_021:ad8920@cluster0.f7migc1.mongodb.net/?retryWrites=true&w=majority"
 )  # mongodb uri from https://www.mongodb.com/
-OWNER_ID = int(os.environ.get("OWNER_ID"))  # id of the owner
+OWNER_ID = int(os.environ.get("OWNER_ID", "5973998255"))  # id of the owner
 ADMINS.append(OWNER_ID) if OWNER_ID not in ADMINS else []
 
 #  Optionnal variables
 LOG_CHANNEL = int(
-    os.environ.get("LOG_CHANNEL", "0")
+    os.environ.get("LOG_CHANNEL", "-1001810365326")
 )  # log channel for information about users
 UPDATE_CHANNEL = os.environ.get(
     "UPDATE_CHANNEL", False)  # For Force Subscription
@@ -43,10 +43,10 @@ BROADCAST_AS_COPY = is_enabled(
     (os.environ.get("BROADCAST_AS_COPY", "False")), False
 )  # true if forward should be avoided
 IS_PRIVATE = is_enabled(
-    os.environ.get("IS_PRIVATE", "False"), "False"
+    os.environ.get("IS_PRIVATE", "true"), "False"
 )  # true for private use and restricting users
 SOURCE_CODE = os.environ.get(
-    "SOURCE_CODE", "https://github.com/kevinnadar22/URL-Shortener-V2"
+    "SOURCE_CODE", "https://github.com/Mahakaal101/ur2"
 )  # for upstream repo
 # image when someone hit /start
 WELCOME_IMAGE = os.environ.get("WELCOME_IMAGE", "")
@@ -78,4 +78,4 @@ FORWARD_MESSAGE = is_enabled(
 
 WEB_SERVER = is_enabled(os.environ.get("WEB_SERVER", "True"), True)
 PING_INTERVAL = int(os.environ.get("PING_INTERVAL", "240"))
-PORT = int(os.environ.get("PORT", "8000"))
+PORT = int(os.environ.get("PORT", "8024"))
