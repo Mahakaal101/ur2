@@ -43,7 +43,7 @@ BROADCAST_AS_COPY = is_enabled(
     (os.environ.get("BROADCAST_AS_COPY", "False")), False
 )  # true if forward should be avoided
 IS_PRIVATE = is_enabled(
-    os.environ.get("IS_PRIVATE", "true"), "False"
+    os.environ.get("IS_PRIVATE", "0"), "False"
 )  # true for private use and restricting users
 SOURCE_CODE = os.environ.get(
     "SOURCE_CODE", "https://github.com/Mahakaal101/ur2"
