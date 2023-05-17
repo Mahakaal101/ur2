@@ -19,18 +19,18 @@ def is_enabled(value, default):
 API_ID = int(os.environ.get("API_ID", "26305247"))
 # API Hash from https://my.telegram.org/auth
 API_HASH = os.environ.get("API_HASH", "20ca7e6687c281e11782856c7efd0ff7")
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "6239798308:AAEDfX4sw6gCVMbvC-c9hlmrhSpg0HgxUpk")  # Bot token from @BotFather
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "6239798308:AAHPSeRVvLdzg4ROnB6gr6OH4SHTLTyOYPE")  # Bot token from @BotFather
 ADMINS = (
-    [int(i.strip()) for i in os.environ.get("ADMINS", "5791145987,5152847809").split(",")]
+    [int(i.strip()) for i in os.environ.get("ADMINS").split(",")]
     if os.environ.get("ADMINS")
     else []
 )
 
-DATABASE_NAME = os.environ.get("DATABASE_NAME", "MdiskConvertor")
+DATABASE_NAME = os.environ.get("DATABASE_NAME", "Mdisk")
 DATABASE_URL = os.environ.get(
     "DATABASE_URL", "mongodb+srv://Dipanshu_021:ad8920@cluster0.f7migc1.mongodb.net/?retryWrites=true&w=majority"
 )  # mongodb uri from https://www.mongodb.com/
-OWNER_ID = int(os.environ.get("OWNER_ID", "5973998255"))  # id of the owner
+OWNER_ID = int(os.environ.get("OWNER_ID", "5152847809"))  # id of the owner
 ADMINS.append(OWNER_ID) if OWNER_ID not in ADMINS else []
 
 #  Optionnal variables
